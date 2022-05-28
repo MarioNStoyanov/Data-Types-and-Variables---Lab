@@ -1,0 +1,29 @@
+using System;
+
+namespace _11.Reefactor_Volume_of_Pyramid
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int count = int.Parse(Console.ReadLine());
+            bool isSpecialNum = false;
+            for (int i = 1; i <= count; i++)
+            {
+            
+                int currentNum = i;
+                int num = 0;
+                while (i > 0)
+                {
+                    num += i % 10;
+                    i = i / 10;
+                }
+                isSpecialNum = (num == 5) || (num == 7) || (num == 11);
+                Console.WriteLine("{0} -> {1}", currentNum, isSpecialNum);
+                num = 0;
+                i = currentNum;
+            }
+
+            }
+        }
+}
