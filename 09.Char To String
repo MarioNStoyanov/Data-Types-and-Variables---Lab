@@ -1,0 +1,18 @@
+using System;
+
+namespace _08.Town_Info
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char first = char.Parse(Console.ReadLine());
+            char second = char.Parse(Console.ReadLine());
+            char third = char.Parse(Console.ReadLine());
+            string firstCopy = first.ToString();
+            string secondCopy = second.ToString();
+            string thirdCopy = third.ToString();
+            Console.WriteLine(firstCopy+secondCopy+thirdCopy);
+        }
+    }
+}
