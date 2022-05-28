@@ -1,0 +1,21 @@
+using System;
+
+namespace ConsoleApp110.Upper_Case_or_Lower
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char a = char.Parse(Console.ReadLine());
+            if (Char.IsUpper(a))
+            {
+                Console.WriteLine("upper-case");
+
+            }
+            else
+            {
+                Console.WriteLine("lower-case");
+            }
+        }
+    }
+}
