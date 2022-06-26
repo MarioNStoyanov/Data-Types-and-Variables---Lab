@@ -1,0 +1,51 @@
+using System;
+
+namespace _01.The_biscuit_Factory
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double biscuitPerWorkerDaily = int.Parse(Console.ReadLine());
+            double workersCount = int.Parse(Console.ReadLine());
+            double competingFactoryBiscuits = int.Parse(Console.ReadLine());
+            double totalSum = 0;
+            int count = 0;
+
+            for (int i = 1; i <= 30; i++)
+            {
+                double dailyDose = biscuitPerWorkerDaily * workersCount;
+                count++;
+                if (count == 3)
+                {
+                    totalSum += Math.Floor(dailyDose*0.75);
+                    count = 0;
+                }
+                else
+                {
+                    totalSum += biscuitPerWorkerDaily * workersCount;
+                }
+
+            }
+            double biggerSum = Math.Max(totalSum, competingFactoryBiscuits);
+            double smallerSum = Math.Min(totalSum, competingFactoryBiscuits);
+            double difference = biggerSum - smallerSum;
+            double percentDifference = difference / biggerSum*100 ;
+
+            if (totalSum>competingFactoryBiscuits)
+            {
+                Console.WriteLine($"You have produced {totalSum} biscuits for the past month.");
+                Console.WriteLine($"You produce {percentDifference:F2} percent more biscuits.");
+
+            }
+            else
+            {
+                Console.WriteLine($"You have produced {totalSum} biscuits for the past month.");
+                Console.WriteLine($"You produce {percentDifference:F2} percent less biscuits.");
+                
+            }
+            
+
+        }
+    }
+}
